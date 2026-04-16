@@ -1,10 +1,8 @@
-Clínica DocMais
+# Clínica DocMais
 
 Sistema moderno para gestão de clínicas médicas, focado em organização, eficiência e praticidade no atendimento.
 
-✨ Funcionalidades
-
-A Clínica DocMais foi desenvolvida para facilitar o dia a dia de clínicas e consultórios médicos. Confira o que o sistema oferece:
+✨## Funcionalidades A Clínica DocMais foi desenvolvida para facilitar o dia a dia de clínicas e consultórios médicos. Confira o que o sistema oferece:
 
 * 👤 Cadastro completo de pacientes
 * 🩺 Cadastro e gerenciamento de médicos
@@ -42,14 +40,8 @@ Este projeto foi desenvolvido com tecnologias modernas:
 * 🌐 HTML, CSS e JavaScript
 * 🎨 Formatação de Texto (Markdown)
 
-Exemplos usados neste documento:
+### Exemplos usados neste documento:
 
-Negrito: texto aqui
-Itálico: texto aqui
-Tachado: texto aqui
-Código inline: texto aqui
-📚 Listas
-🔹 Lista com marcadores
 ASP.NET Core 9
 Entity Framework
 MySQL
