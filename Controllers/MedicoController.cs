@@ -1,4 +1,5 @@
-﻿using ClinicaDocMais.Models;
+﻿using ClinicaDocMais.Data;
+using ClinicaDocMais.Models;
 using ClinicaDocMais.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,19 +11,31 @@ namespace ClinicaDocMais.Controllers
     [ApiController]
     public class MedicoController : ControllerBase
     {
-        public static List<MedicoModel> listaMedicos = new List<MedicoModel>();
-
-        [HttpPost("CadastroMedico")]
-        public string cadastrarMedico([FromBody] MedicoModel medico)
+        private ClinicaContext _context;
+        public MedicoController(ClinicaContext context)
         {
-            listaMedicos.Add(medico);
-            return $"Dr.{medico.nomedoMedico} cadastrado com sucesso";
-
+            _context = context;
         }
-        [HttpGet("listaMedico")]
-        public List<MedicoModel> listarMedico()
+
+        [HttpPost("CadastrarMedico")]
+        public async Task<IActionResult> cadastrarMedico([FromBody]MedicoModel medicoCadastrado) 
         {
-            return listaMedicos;
+            try
+            {
+                _context.Add(medicoCadastrado);
+                return BadRequest("Erro Inesperado.Ero" );
+            }
+           
+
+            catch (Exception ex)
+            {
+                return BadRequest("Erro inesperado" +ex.Message);
+            }
+        }
+        [HttpGet("buscaMedico/{crm}")]
+        public async Task<IActionResult> buscaMedico(string crm)
+        {
+            return Ok();
 
         }
 
